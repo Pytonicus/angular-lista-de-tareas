@@ -1,0 +1,18 @@
+<div *ngIf="!mostrarDatos">
+  {{tareaInfo.texto}}
+
+  <span class="herramientas">
+    <span class="item editar">
+      <small (click)="activarEdicion(tareaInfo.texto)">editar </small>
+    </span>
+
+    <span class="item borrar">
+        <small (click)="borrarRegistro(tareaInfo)"> borrar</small>
+    </span>
+
+  </span>
+</div>
+<div *ngIf="mostrarDatos">
+  <input type="text" [(ngModel)]="tareaModel.nombre">
+  <small (click)="editarTarea(tareaInfo)">guardar</small>
+</div>

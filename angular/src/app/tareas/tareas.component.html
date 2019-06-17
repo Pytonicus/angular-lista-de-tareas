@@ -1,0 +1,14 @@
+  <ul class="list-unstyled">
+      <li *ngFor="let tarea of tareas">
+          <app-tarea-individual [tareaInfo]="tarea" (cambioTarea) = "actualizar()"> </app-tarea-individual> <!-- Le pasamos al parámetro el resultado del bucle tarea -->
+      </li>
+      <!-- Añadimos el siguiente código que se mostrara cuando no hayan elementos en la lista -->
+      <div *ngIf="!tareas || tareas.length <= 0">
+          <h2>Lista vacia</h2>
+        </div>
+      <input type="text" [(ngModel)]="modeloTareas.nuevoNombre">
+      <button (click)="crearRegistro()">GUARDAR</button>
+  </ul>
+
+ 
+
